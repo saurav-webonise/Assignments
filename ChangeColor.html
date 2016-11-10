@@ -1,0 +1,79 @@
+ <html>
+  <head>
+    <title>Change Cell Color</title>
+    <script type="text/javascript">
+      function cellColor(tdcolor)
+        {
+          
+          if(document.getElementById('green').checked)
+          {
+              if(tdcolor.bgColor=="Green")
+              {
+                  alert("Already Green");
+              }
+              else
+              {
+                  tdcolor.bgColor = "Green";
+              }    
+          }
+          else if(document.getElementById('blue').checked)
+          {
+              if(tdcolor.bgColor=="Blue")
+              {
+                  alert("Already Blue");
+              }
+              else
+              {
+                  tdcolor.bgColor = "Blue";
+              }   
+          }
+          else if(document.getElementById('red').checked)
+          {
+              if(tdcolor.bgColor=="Red")
+              {
+                  alert("Already Red");
+              }
+              else
+              {
+                  tdcolor.bgColor = "Red";
+              }     
+          }
+        }
+        function reset() 
+        {
+            var table = document.getElementById('colortable');
+            for (var r = 0, n = table.rows.length; r < n; r++) 
+            {
+                for (var c = 0, m = table.rows[r].cells.length; c < m; c++) 
+                {
+                    table.rows[r].cells[c].bgColor="white";
+                  }
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <input type="radio" name="color" id="green">Green</input>
+    <input type="radio" name="color" id="blue">Blue</input>
+    <input type="radio" name="color" id="red">Red</input>
+    <table border=1 id="colortable" width="100px">
+      <tr>
+        <td onclick="cellColor(this)" value="1" id =1> 1 </td>
+        <td onclick="cellColor(this)" value="2" id =2> 2 </td>
+        <td onclick="cellColor(this)" value="3" id =3> 3 </td>
+      </tr>
+      <tr>
+        <td id=4 onclick="cellColor(this)" value="4"> 4 </td>
+        <td id=5 onclick="cellColor(this)" value="5"> 5 </td>
+        <td id=6 onclick="cellColor(this)" value="6"> 6 </td>
+      </tr>
+      <tr>
+        <td id=7 onclick="cellColor(this)" value="7"> 7 </td>
+        <td id=8 onclick="cellColor(this)" value="8"> 8 </td>
+        <td id=9 onclick="cellColor(this)" value="9"> 9 </td>
+      </tr>
+    </table>
+    <input type="button" id="reset" onclick="reset()" value="Reset">
+    <input type="button" id="shuffle" onclick="reset()" value="Shuffle">
+  </body>
+</html>

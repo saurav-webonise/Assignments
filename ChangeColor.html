@@ -50,13 +50,57 @@
                   }
             }
         }
+         function shuffle()
+            {
+                var table = document.getElementById('colortable');
+                var arrayElemCount=0;
+                var numarray=[];
+                for (var r = 0, n = table.rows.length; r < n; r++) 
+                {
+                    for (var c = 0, m = table.rows[r].cells.length; c < m; c++) 
+                    {
+                        arrayElemCount++;
+                        numarray.push(arrayElemCount);
+                    }
+                }
+                var i=0;
+                numarray=shuffle_array(numarray);
+                i=0;
+                for (var r = 0, n = table.rows.length; r < n; r++) 
+                {
+                    for (var c = 0, m = table.rows[r].cells.length; c < m; c++) 
+                    {
+                        elem=document.getElementById(""+numarray[i]);
+                        temp=table.rows[r].cells[c].bgColor;
+                        table.rows[r].cells[c].bgColor=elem.bgColor;
+                        elem.bgColor=temp;
+                        i++;
+                    }
+                }
+                
+            }
+            function shuffle_array(array) 
+            {
+                var ind = array.length, temp, randomIndex;
+                while (0 !== ind) 
+                {
+                    randomIndex = Math.floor(Math.random() * ind);
+                    ind -= 1;
+                    temp = array[ind];
+                    array[ind] = array[randomIndex];
+                    array[randomIndex] = temp;
+                }
+                return array;
+            }
+
+
     </script>
   </head>
   <body>
     <input type="radio" name="color" id="green">Green</input>
     <input type="radio" name="color" id="blue">Blue</input>
     <input type="radio" name="color" id="red">Red</input>
-    <table border=1 id="colortable" width="100px">
+    <table border=1 id="colortable" width="350px" height="350px">
       <tr>
         <td onclick="cellColor(this)" value="1" id =1> 1 </td>
         <td onclick="cellColor(this)" value="2" id =2> 2 </td>
@@ -74,6 +118,6 @@
       </tr>
     </table>
     <input type="button" id="reset" onclick="reset()" value="Reset">
-    <input type="button" id="shuffle" onclick="reset()" value="Shuffle">
+    <input type="button" id="shuffle" onclick="shuffle()" value="Shuffle">
   </body>
 </html>

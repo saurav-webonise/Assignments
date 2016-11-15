@@ -27,11 +27,11 @@
 		
 		$productsrecord ="insert ignore into products(product_name,products_color,price) values('Iphone','Jet Black',82000),('Surface Pro','Cyan',290000),('Google Pixel','Really Blue',57000),('Surface Pro','Black',250000),('Iphone','Rose Gold',60000);";
 					
-		$orderstable = "CREATE TABLE if not exists orders (  orders_id INT(10) UNSIGNED NOT NULL,  users_email VARCHAR(45) NOT NULL,  orders_date DATE NOT NULL,  discount INT UNSIGNED NULL,  payment_method VARCHAR(45),  payment_status VARCHAR(45),  orders_total INT UNSIGNED,  UNIQUE INDEX orders_id_UNIQUE (orders_id ASC),  PRIMARY KEY (orders_id),constraint fk_users_email foreign key(users_email) references Users(users_email));";
+		$orderstable = "CREATE TABLE if not exists orders (  orders_id INT(10) UNSIGNED NOT NULL,  users_email VARCHAR(45) NOT NULL,  orders_date DATE NOT NULL,  discount INT UNSIGNED NULL,  payment_method VARCHAR(45),  payment_status VARCHAR(45),  orders_total INT UNSIGNED,  UNIQUE INDEX orders_id_UNIQUE (orders_id ASC),  PRIMARY KEY (orders_id),constraint fk_users_email foreign key(users_email) references users(users_email));";
 		
 		$ordersrecord ="insert ignore into orders(orders_id,users_email,orders_date,discount,payment_method,payment_status) values(11111111,'rohan.kulkarni@webonise.com','2016-10-11',15,'Online','Success'),(22222222,'amit.kumar@webonise.com','2016-10-22',10,'COD','Success'),(33333333,'pramodh.bhalothia@webonise.com','2016-11-09',12,'COD','Failed'),(44444444,'amit.kumar@webonise.com','2016-11-12',10,'Online','Success'),(55555555,'jay.singhvi@webonise.com','2016-11-14',12,'Online','Failed');";
 
-		$orderdetailstable = "create table if not exists order_details(orders_id int(10) ,products_id int,products_price int not null);";	
+		$orderdetailstable = "create table if not exists order_details(orders_id int(10) ,products_id int,products_price int not null);";
 
 		$orderdetailsrecord ="insert ignore into order_details values(11111111,1,82000),(11111111,3,57000),(22222222,2,290000),(33333333,5,60000),(44444444,4,250000),(44444444,3,57000),(55555555,1,82000);";
 

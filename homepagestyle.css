@@ -1,0 +1,63 @@
+.header .logo{
+	float: left;
+}
+.header ul{
+	float: right;
+}
+.header li {
+	float: left;
+	list-style: none;
+	padding: 25px;
+	font-size: 30px;
+}
+.header li a{
+	text-decoration: none;
+	color: black;	
+}
+.header li a:hover{
+	text-decoration: underline;
+}
+.header .clear{
+	clear: both;
+}
+.mainsection .bodyimage{
+	float: left;
+	width: 350px;
+}
+.mainsection p{
+	float: left;
+	width: 1100px;
+	height: 200px;
+}
+.mainsection .learnmore{
+	float: left;
+}
+.mainsection .clear{
+	clear: both;
+}
+.mainsection .learnmore a:hover {
+ background-color: DarkGreen;
+}
+.mainsection .learnmore a{
+  background-color: ForestGreen;  
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+}
+.footer ul{
+	float: left;
+}
+.footer li{
+	float: left;
+	list-style: none;
+	padding: 25px;
+	font-size: 30px;
+}
+.footer li a{
+	text-decoration: none;
+	color: black;	
+}
+.footer li a:hover{
+	text-decoration: underline;
+}

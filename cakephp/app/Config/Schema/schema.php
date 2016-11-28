@@ -8,7 +8,7 @@ class AppSchema extends CakeSchema {
 	public function after($event = array()) {
 	}
 
-	public $pincode = array(
+	public $pincodes = array(
 		'pincode' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 6, 'unsigned' => false, 'key' => 'index'),
 		'district' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 20, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'indexes' => array(
@@ -28,7 +28,7 @@ class AppSchema extends CakeSchema {
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
 
-	public $student = array(
+	public $students = array(
 		'prn' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'unsigned' => false, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 50, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'city' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 20, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),

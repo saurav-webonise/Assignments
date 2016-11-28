@@ -16,7 +16,7 @@ class StudentDetails extends CakeMigration {
 	public $migration = array(
 		'up' => array(
 			'create_table' => array(
-				'pincode' => array(
+				'pincodes' => array(
 					'pincode' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 6, 'unsigned' => false, 'key' => 'index'),
 					'district' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 20, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 					'indexes' => array(
@@ -24,7 +24,7 @@ class StudentDetails extends CakeMigration {
 					),
 					'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB'),
 				),
-				'student' => array(
+				'students' => array(
 					'prn' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'unsigned' => false, 'key' => 'primary'),
 					'name' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 50, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 					'city' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 20, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
@@ -39,7 +39,7 @@ class StudentDetails extends CakeMigration {
 		),
 		'down' => array(
 			'drop_table' => array(
-				'pincode', 'student'
+				'pincodes', 'students'
 			),
 		),
 	);

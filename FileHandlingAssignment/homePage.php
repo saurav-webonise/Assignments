@@ -10,13 +10,13 @@
 	
 	<h2>Your Books : 
 		<?php  
-			$sqlQuery= "SELECT bookName FROM books_details WHERE userName = '".$_SESSION['userName']."'"; 
+			$sqlQuery= "SELECT book_name FROM books_details WHERE user_name = '".$_SESSION['userName']."'"; 
 			$stmt = $conn->prepare($sqlQuery);
 			$stmt->execute();
 			$result = $stmt->fetchAll();
 			foreach($result as $row)
 			{
-    			echo "<li>{$row['bookName']}</li>";
+    			echo "<li>{$row['book_name']}</li>";
 			}
 		?>
 	</h2>

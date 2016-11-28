@@ -2,7 +2,7 @@
 	$dbHost="localhost";
 	$dbUser="root";
 	$dbPassword="root";
-	$dbName="pdo_Assignment";
+	$dbName="pdo_assignment";
 	try
 	{
     	$conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);

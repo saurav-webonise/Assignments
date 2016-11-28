@@ -4,7 +4,7 @@
 	$bookName=$_POST['bookName'];
 	$myBook = $bookName.'.txt';
 	unlink($myBook);
-	$sql = "DELETE FROM books_details WHERE bookName = '".$bookName."'";
+	$sql = "DELETE FROM books_details WHERE book_name = '".$bookName."'";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 	@header("Location:homePage.php");

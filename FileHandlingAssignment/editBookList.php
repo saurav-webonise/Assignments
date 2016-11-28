@@ -14,13 +14,13 @@
 	<h2>
 	<form name="bookList" method="POST" action="editBook.php">
 	<?php 
-			$sqlQuery= "SELECT bookName FROM books_details WHERE userName = '".$_SESSION['userName']."'"; 
+			$sqlQuery= "SELECT bookName FROM books_details WHERE user_name = '".$_SESSION['userName']."'"; 
 			$stmt = $conn->prepare($sqlQuery);
 			$stmt->execute();
 			$result = $stmt->fetchAll();
 			foreach($result as $row)
 			{
-    			echo "<input type='submit' name='bookName' value='{$row['bookName']}'</><br/><br/>";
+    			echo "<input type='submit' name='bookName' value='{$row['book_name']}'</><br/><br/>";
 			}
 	?>
 	</form>

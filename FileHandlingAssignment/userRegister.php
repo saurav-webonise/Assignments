@@ -10,7 +10,7 @@
 		$lastName=$_POST['lastName'];
 		$userName=$_POST['userName'];
 		$password=$_POST['userPassword'];
-		$sql = "INSERT INTO userDetails VALUES ('".$firstName."', '".$lastName."', '".$userName."','".$password."')";
+		$sql = "INSERT INTO user_details VALUES ('".$firstName."', '".$lastName."', '".$userName."','".$password."')";
     	$conn->exec($sql);
     	@header("Location:userLogin.html");	
 	}

@@ -14,7 +14,7 @@
 	<h2>
 	<form name="bookList" method="POST" action="deleteBook.php">
 	<?php 
-			$sqlQuery= "SELECT bookName FROM booksDetails WHERE userName = '".$_SESSION['userName']."'"; 
+			$sqlQuery= "SELECT bookName FROM books_details WHERE userName = '".$_SESSION['userName']."'"; 
 			$stmt = $conn->prepare($sqlQuery);
 			$stmt->execute();
 			$result = $stmt->fetchAll();

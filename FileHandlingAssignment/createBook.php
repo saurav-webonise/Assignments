@@ -11,7 +11,7 @@
 		$bookContents=$_POST['txtAreaBook'];
 		$myBook = fopen($bookName.".txt", "w");
 		fwrite($myBook, $bookContents);
-		$sql = "INSERT INTO booksDetails VALUES ('".$bookName."', '".$_SESSION['userName'].	"')";
+		$sql = "INSERT INTO books_details VALUES ('".$bookName."', '".$_SESSION['userName'].	"')";
     	$conn->exec($sql);
     	@header("Location:homePage.php");
 	}

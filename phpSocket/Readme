@@ -1,0 +1,24 @@
+PHP Socket Programming : 
+=>Summary : A basic socket program to send and recieve text data. The data is also encrypted and send to the client.
+_______________________________________________________________________________________________________________________________________________________________________
+
+client.php :
+=> Client is provided with a simple UI in which the user needs to enter the message which will be send and with it a key should also be entered which will be use to convert the plain text into cipher text.
+=> Validations : User cannot left the message and key fields blank. Also the value of the key should be less than 10.
+_________________________________________________________________________________________________________________________________________________________________________
+
+server.php :
+=> Server will recieve the text message and key from the client and will accordingly encrypt the message as cipher text.
+=> Server will then send the encryted text to the client.
+_______________________________________________________________________________________________________________________________________________________________________
+
+config.php :
+=> It contains the Host IP, Port number and the time limit to expire the socket connection.
+=> It is included in both i.e client.php and server.php files.
+_______________________________________________________________________________________________________________________________________________________________________
+
+How to test the program : 
+=> The server.php should be executed first and let it load.
+=> Then in another tab open the phpSocket.html file. Provide the inputs in it and click on submit button.
+=> It will then redirect you to the client.php which will show the original message and with it the encrypted cipher text.
+=> The server.php will automatically finish loading after this step and will show the message it recieved from the client.

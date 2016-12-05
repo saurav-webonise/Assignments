@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User Registration</title>
+	</head>
+	<body>
+		<form action="userRegister.php" method="POST">
+		<center>
+		<table border = 1 cellpadding="7" cellspacing="1">
+			<th colspan=2>Registration</th>
+			<tr>
+				<td>First Name : &nbsp;</td>
+				<td><input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required></td>
+			</tr>
+			<tr>
+				<td>Last Name : &nbsp;</td>
+				<td><input type="text" id="lastName" name="lastName" placeholder="Enter First Name" required></td>
+			</tr>
+			<tr>
+				<td>User Name : &nbsp;</td>
+				<td><input type="text" id="userName" name="userName" placeholder="Enter User Id" required></td>
+			</tr>
+			<tr>
+				<td>Password : &nbsp;</td>
+				<td><input type="password" id="userPassword" name="userPassword" placeholder="Enter Password" required></td>
+			</tr>
+			<tr>
+				<td  align="center"><input type="button" id="btnLogin" name="btnLogin" value="Login" onclick="document.location.href='userLogin.html'">
+				<td  align="center"><input type="submit" id="submit" name="submit" value="Register!"></center></td>
+			</tr>
+	  </table>
+	  </center>
+	  </form>  
+	</body>
+</html>

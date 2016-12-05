@@ -29,35 +29,23 @@ var count=7;
 function letterCheck()
 {
     var input=document.getElementById("letter").value;
-    //alert(input);_i
     var word=document.getElementById("word").value;
-    //alert(word);
     $.ajax({
-        url:"checkLetter.php", //the page containing php script
-        type: "GET", //request type
+        url:"checkLetter.php",
+        type: "GET",
         data: {'input':input,'word':word},
-        success:function(result)
-        {
-            if(count>0)
-            {
-                if(result=="wrong letter"){
+        success:function(result){
+            if(count>0){
+            	if(result=="wrong letter"){
                     count--;
                     alert("Incorrect Guess!!! \n So you now have "+(count+1)+" guesses left.");
-
-                }
-                else
-                {
-                    //alert(input+" "+result);
-                    res=result.split("");
-                    for(i=0;i<res.length;i++)
-                    {
-                        //alert(res[i]);
+                }else{
+            	    res=result.split("");
+                    for(i=0;i<res.length;i++){
                         document.getElementById(''+res[i]).value=input;
                     }    
                 }
-            }
-            else
-            {
+            }else{
                 alert("Game Over");
                 alert("New Game About to Start");
                 location.reload();
@@ -68,27 +56,23 @@ function letterCheck()
 </script>
 </html>
 <?php
-function getWord()
-{
+function getWord(){
 	$file="BandsList.txt";
 	$fopen = fopen($file, "r");
 	$fread = fread($fopen,filesize($file));
 	$split = explode("\n", $fread);
-    $array[] = null;
-    foreach ($split as $string)
-    {
-        array_push($array,$string);
-    }
-    $wordIndex = array_rand($array,1);
-    $word = $array[$wordIndex];
-    return $word;
+	$array[] = null;
+    	foreach ($split as $string){
+        	array_push($array,$string);
+	}
+	$wordIndex = array_rand($array,1);
+    	$word = $array[$wordIndex];
+    	return $word;
 }
-
 function totalPlaces($word)
 {
-    for($i=1;$i<=strlen($word);$i++)
-    {
-           echo "<input type='text' id='".$i."' readonly></input>";
+    for($i=1;$i<=strlen($word);$i++){
+    	echo "<input type='text' id='" . $i . "' readonly></input>";
     }
 }
 ?>

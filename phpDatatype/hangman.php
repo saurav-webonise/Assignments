@@ -12,10 +12,9 @@
         global $word;
         $word=getWord();
         echo "<input id='word' name='word' type='hidden' value='".$word."' />";
-        totalPlaces($word);
-        ?>
-        <?php echo "<br/>"; ?>
-        <?php echo "<br/>"; ?>
+        	totalPlaces($word);
+	        echo "<br/>";
+		echo "<br/>"; ?>
         <span id="guessedLetter"><input type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter" /></span>
         <input id="guess" name="guess" type="button" onclick=letterCheck() value="Guess" />
         <button id="restart" name="restart" type="button" onclick=location.reload()>Restart</button>
@@ -30,7 +29,7 @@ var count=7;
 function letterCheck()
 {
     var input=document.getElementById("letter").value;
-    //alert(input);
+    //alert(input);_i
     var word=document.getElementById("word").value;
     //alert(word);
     $.ajax({
@@ -80,8 +79,8 @@ function getWord()
     {
         array_push($array,$string);
     }
-    $word_index = array_rand($array,1);
-    $word = $array[$word_index];
+    $wordIndex = array_rand($array,1);
+    $word = $array[$wordIndex];
     return $word;
 }
 

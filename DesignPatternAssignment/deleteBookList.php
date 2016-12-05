@@ -25,7 +25,7 @@
 			foreach($results as $result)
 			{
 				$bookName = trim($result['book_name']);
-    			echo "<input type='submit' name='bookName' value='" . $bookName . "'</><br/><br/>";
+    				echo "<input type='submit' name='bookName' value='" . $bookName . "'</><br/><br/>";
 			}
 		}catch (Exception $e) {
     			echo 'Caught exception: ',  $e->getMessage(), "\n";

@@ -11,11 +11,9 @@
 		$myBook = fopen($bookName.".txt", "w");
 		fwrite($myBook, $bookContents);
 		$sql = "INSERT INTO book_details VALUES ('" . $bookName . "', '" . $_SESSION['userName'] . "','". $bookDescription . "','" . $bookPrice . "')";
-    	$conn->exec($sql);
-    	@header("Location:homePage.php");
+    		$conn->exec($sql);
+    		@header("Location:homePage.php");
 	}catch (Exception $e) {
-    	echo 'Caught exception: ',  $e->getMessage(), "\n";
+    		echo 'Caught exception: ',  $e->getMessage(), "\n";
 	}
-
-	
 ?>

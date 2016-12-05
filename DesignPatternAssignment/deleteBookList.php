@@ -8,7 +8,7 @@
 	<?php
 		 include 'PostgresConnection.php';  
 		 session_start(); 
-		 echo "".$_SESSION['userName'];
+		 echo "" . $_SESSION['userName'];
 	?>
 	</h1>
 	<hr>
@@ -16,21 +16,22 @@
 	<form name="bookList" method="POST" action="deleteBook.php">
 	<?php 
 		try{
-			$postgresConn=new PostgresConnection;
-			$conn=$postgresConn->connect();
-			$sqlQuery= "SELECT book_name FROM book_details WHERE user_name = '".$_SESSION['userName']."'"; 
+			$postgresConn = new PostgresConnection;
+			$conn = $postgresConn->connect();
+			$sqlQuery = "SELECT book_name FROM book_details WHERE user_name = '" . $_SESSION['userName'] . "'"; 
 			$stmt = $conn->prepare($sqlQuery);
 			$stmt->execute();
-			$result = $stmt->fetchAll();
-			foreach($result as $row)
+			$results = $stmt->fetchAll();
+			foreach($results as $result)
 			{
-				$bookName=trim($row['book_name']);
-    			echo "<input type='submit' name='bookName' value='".$bookName."'</><br/><br/>";
+				$bookName = trim($result['book_name']);
+    			echo "<input type='submit' name='bookName' value='" . $bookName . "'</><br/><br/>";
 			}
 		}catch (Exception $e) {
-    		echo 'Caught exception: ',  $e->getMessage(), "\n";
+    			echo 'Caught exception: ',  $e->getMessage(), "\n";
 		}
 	?>
 	</form>
+	</h2>
 </body>
 </html>
